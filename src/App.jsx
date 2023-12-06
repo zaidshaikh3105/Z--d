@@ -44,7 +44,7 @@ const ProfileImage = () => (
   />
 );
 const images = [
-  "https://github.com/zaidshaikh3105/Z--d/blob/main/src/Images/mongodb-icon-1.svg",
+  "src/Images/mongodb-icon-1.svg",
   "src/Images/react-2.svg",
   "src/Images/icons8-express-js.svg",
   "src/Images/nodejs-1.svg",
