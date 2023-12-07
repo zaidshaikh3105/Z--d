@@ -39,17 +39,20 @@ const ProfileImage = () => (
   <CardMedia
     component="img"
     style={{}}
-    src=".\src\Images\undraw_feeling_proud_qne1.svg"
+    src="src\public\Images\undraw_feeling_proud_qne1.svg"
     alt="Your Name"
   />
 );
 const images = [
-  "src/Images/mongodb-icon-1.svg",
-  "src/Images/react-2.svg",
-  "src/Images/icons8-express-js.svg",
-  "src/Images/nodejs-1.svg",
+  "src/public/Images/mongodb-icon-1.svg",
+  "src/public/Images/react-2.svg",
+  "src/public/Images/icons8-express-js.svg",
+  "src/public/Images/nodejs-1.svg",
 ];
-const img = ["src/Images/flutter-logo.svg", "src/Images/azure-2.svg"];
+const img = [
+  "src/public/Images/flutter-logo.svg",
+  "src/public/Images/azure-2.svg",
+];
 // ABout Me
 const AboutMe = () => (
   <div data-aos="zoom-in">
@@ -200,12 +203,12 @@ const Contact = () => (
 );
 //Clicks
 const clicks = [
-  "src/Images/clicks_3.jpg",
-  "src/Images/clicks_1.jpg",
-  "src/Images/clicks_2.jpg",
-  "src/Images/clicks_4.jpg",
-  "src/Images/clicks_5.jpg",
-  "src/Images/clicks_6.jpg",
+  "src/public/Images/clicks_3.jpg",
+  "src/public/Images/clicks_1.jpg",
+  "src/public/Images/clicks_2.jpg",
+  "src/public/Images/clicks_4.jpg",
+  "src/public/Images/clicks_5.jpg",
+  "src/public/Images/clicks_6.jpg",
 ];
 const Clicks = () => (
   <Container
