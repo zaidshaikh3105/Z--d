@@ -39,7 +39,7 @@ const ProfileImage = () => (
   <CardMedia
     component="img"
     style={{}}
-    src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    src="src\Images\undraw_feeling_proud_qne1.svg"
     alt="Your Name"
   />
 );
