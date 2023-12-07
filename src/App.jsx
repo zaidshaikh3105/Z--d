@@ -186,18 +186,9 @@ const Projects = () => (
     <Typography variant="h4" gutterBottom>
       Projects
     </Typography>
-    {/* Projects content */}
-  </Container>
-  //Contact
-);
-const Contact = () => (
-  <Container>
-    <Typography variant="h4" gutterBottom>
-      Contact
-    </Typography>
-    {/* Projects content */}
   </Container>
 );
+
 //Clicks
 const clicks = [
   "./clicks_3.jpg",
@@ -265,11 +256,11 @@ const App = () => {
           alignItems: "center",
           justifyContent: "center",
           background: "linear-gradient(to right, #003973, #E5E5BE)",
-          height: "100vh", // Full height of the screen
-          width: "100vw", // Full width of the screen
+          height: "100vh",
+          // width: "100vw",
           margin: "auto",
           padding: "20px",
-          borderRadius: "10px", // Adjust the radius as needed
+          borderRadius: "10px",
         }}
       >
         <Card
@@ -277,10 +268,9 @@ const App = () => {
             backgroundColor: "transparent",
             borderRadius: "100",
             borderColor: "black",
-            borderStyle: "solid", // Specify the border style (optional)
-            borderWidth: "2px",
-            height: "800px", // Full height of the screen
-            width: "1500px", // Full width of the screen
+            borderStyle: "solid",
+            height: "800px",
+            width: "1500px",
           }}
         >
           <Grid container>
@@ -296,11 +286,10 @@ const App = () => {
                       backgroundColor: "transparent",
                       borderRadius: "100",
                       borderColor: "black",
-                      borderStyle: "solid", // Specify the border style (optional)
+                      borderStyle: "solid",
                       borderWidth: "1px",
                       display: "flex",
-                      justifyContent: "center", // Center horizontally
-                      alignItems: "center",
+                      justifyContent: "center",
                       height: "80px",
                     }}
                   >
@@ -326,10 +315,10 @@ const App = () => {
                     backgroundColor: "transparent",
                     borderRadius: "100",
                     borderColor: "black",
-                    borderStyle: "solid", // Specify the border style (optional)
+                    borderStyle: "solid",
                     borderWidth: "1px",
                     display: "flex",
-                    justifyContent: "center", // Center horizontally
+                    justifyContent: "center",
                     alignItems: "center",
                   }}
                 >
@@ -367,12 +356,7 @@ const App = () => {
                       component={Link}
                       to="/projects"
                     />
-                    {/* <Tab
-                      label="contact"
-                      icon={<EmailOutlined />}
-                      component={Link}
-                      to="/contact"
-                    /> */}
+
                     <Tab
                       label="Clicks"
                       icon={<PhotoOutlined />}
@@ -386,7 +370,6 @@ const App = () => {
                   <Route path="/experience" element={<Experience />} />
                   <Route path="/skills" element={<Skills />} />
                   <Route path="/projects" element={<Projects />} />
-                  <Route path="/contact" element={<Contact />} />
                   <Route path="/clicks" element={<Clicks />} />
                 </Routes>
               </CardContent>
