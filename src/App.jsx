@@ -44,15 +44,12 @@ const ProfileImage = () => (
   />
 );
 const images = [
-  "src/public/Images/mongodb-icon-1.svg",
-  "src/public/Images/react-2.svg",
-  "src/public/Images/icons8-express-js.svg",
-  "src/public/Images/nodejs-1.svg",
+  "./mongodb-icon-1.svg",
+  "./react-2.svg",
+  "./icons8-express-js.svg",
+  "./nodejs-1.svg",
 ];
-const img = [
-  "src/public/Images/flutter-logo.svg",
-  "src/public/Images/azure-2.svg",
-];
+const img = ["./flutter-logo.svg", "./azure-2.svg"];
 // ABout Me
 const AboutMe = () => (
   <div data-aos="zoom-in">
@@ -168,7 +165,7 @@ const Skills = () => (
       <div>
         {skillsData.map((skill, index) => (
           <div key={index} style={{ margin: "30px 0" }}>
-            <Typography variant="subtitle1" style={{ marginBottom: "5px" }}>
+            <Typography variant="h5" style={{ marginBottom: "5px" }}>
               {skill.skill}
             </Typography>
             <ProgressBar
@@ -203,12 +200,12 @@ const Contact = () => (
 );
 //Clicks
 const clicks = [
-  "src/public/Images/clicks_3.jpg",
-  "src/public/Images/clicks_1.jpg",
-  "src/public/Images/clicks_2.jpg",
-  "src/public/Images/clicks_4.jpg",
-  "src/public/Images/clicks_5.jpg",
-  "src/public/Images/clicks_6.jpg",
+  "./clicks_3.jpg",
+  "./clicks_1.jpg",
+  "./clicks_2.jpg",
+  "./clicks_4.jpg",
+  "./clicks_5.jpg",
+  "./clicks_6.jpg",
 ];
 const Clicks = () => (
   <Container
