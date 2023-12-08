@@ -170,7 +170,7 @@ const Skills = () => (
             <ProgressBar
               variant={skill.color}
               now={skill.value}
-              style={{ height: "20px" }}
+              style={{ height: "15px" }}
             />
           </div>
         ))}
@@ -256,19 +256,18 @@ const App = () => {
           justifyContent: "center",
           background: "linear-gradient(to right, #003973, #E5E5BE)",
           height: "100vh",
-          // width: "100vw",
+          width: "100vw",
           margin: "auto",
-          padding: "20px",
-          borderRadius: "10px",
+          padding: "10px",
         }}
       >
         <Card
           sx={{
             backgroundColor: "transparent",
-            borderRadius: "100",
+            borderRadius: "1",
             borderColor: "black",
             borderStyle: "solid",
-            height: "800px",
+            //height: "800px",
             width: "1500px",
           }}
         >
@@ -289,7 +288,7 @@ const App = () => {
                       borderWidth: "1px",
                       display: "flex",
                       justifyContent: "center",
-                      height: "80px",
+                      height: "60px",
                     }}
                   >
                     <Tabs
