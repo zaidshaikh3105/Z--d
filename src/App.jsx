@@ -28,7 +28,6 @@ import {
 import Aos from "aos";
 import SimpleImageSlider from "react-simple-image-slider";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
