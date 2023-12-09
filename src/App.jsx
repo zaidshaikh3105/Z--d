@@ -12,8 +12,6 @@ import {
   Paper,
   Grid,
   Box,
-  ImageList,
-  ImageListItem,
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import "aos/dist/aos.css";
@@ -33,14 +31,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 ////////////////////////////////////////////////////////////////////////////////
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
+
 //Profile image
 
 const images = [
