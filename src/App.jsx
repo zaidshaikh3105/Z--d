@@ -269,11 +269,31 @@ const handleTabChange = (event, newValue) => {
       break;
   }
 };
+
 const App = () => {
   useEffect(() => {
     Aos.init();
   }, []);
   const [tabValue, setTabValue] = useState(0);
+  useEffect(() => {
+    // Get the current pathname and determine the tab index
+    const path = window.location.pathname;
+    const tabIndex = [
+      "/",
+      "/experience",
+      "/skills",
+      "/projects",
+      "/clicks",
+    ].indexOf(path);
+
+    // Set the tab value based on the index or default to 0
+    setTabValue(tabIndex !== -1 ? tabIndex : 0);
+  }, []);
+  const handleChange = (event, newValue) => {
+    setTabValue(newValue);
+    const paths = ["/", "/experience", "/skills", "/projects", "/clicks"];
+    window.history.pushState(null, "", paths[newValue]);
+  };
 
   return (
     <Router>
@@ -377,7 +397,7 @@ const App = () => {
                 >
                   <Tabs
                     value={tabValue}
-                    onChange={(event, newValue) => setTabValue(newValue)}
+                    onChange={handleChange}
                     textColor="lack"
                     TabIndicatorProps={{
                       style: {
