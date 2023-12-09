@@ -12,6 +12,8 @@ import {
   Paper,
   Grid,
   Box,
+  ImageList,
+  ImageListItem,
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import "aos/dist/aos.css";
@@ -26,22 +28,21 @@ import {
   WorkOutline,
 } from "@mui/icons-material";
 import Aos from "aos";
-import SimpleImageSlider from "react-simple-image-slider";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 ////////////////////////////////////////////////////////////////////////////////
-
+function srcset(image, size, rows = 1, cols = 1) {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${
+      size * rows
+    }&fit=crop&auto=format&dpr=2 2x`,
+  };
+}
 //Profile image
-const ProfileImage = () => (
-  <CardMedia
-    component="img"
-    style={{}}
-    src="./undraw_feeling_proud_qne1.svg"
-    alt="Your Name"
-  />
-);
+
 const images = [
   "./mongodb-icon-1.svg",
   "./react-2.svg",
@@ -51,25 +52,29 @@ const images = [
 const img = ["./flutter-logo.svg", "./azure-2.svg"];
 // ABout Me
 const AboutMe = () => (
-  <div data-aos="zoom-in">
-    <Container>
-      {/* <CardMedia component="img" src="src\Images\undraw_profile_re_4a55.svg" /> */}
-      <Typography variant="h2" margin={1}>
+  <div data-aos="zoom-out">
+    <Container
+      sx={{
+        padding: "20px",
+        "@media (max-width: 600px)": {
+          padding: "10px",
+        },
+      }}
+    >
+      <Typography variant="h3" margin={1}>
         Greetings!!!
       </Typography>
-      <Typography variant="h3">
+      <Typography variant="h4">
         I am Zaid Shaikh, a passionate React.js and Flutter developer with a
         focus on integrating web and mobile experiences with ease.
       </Typography>
-      <Typography variant="h6">
+      <Typography variant="h5">
         Equipped with a Masters degree in Computer Science from the renowned
         University of Mumbai,I have a good understanding as well as proficiency
         with React.js |Material-UI | |Express.js|Node.js|Flutter|Microsoft Azure
       </Typography>
       <div
         style={{
-          //  marginRight: "50px",
-          //s marginBottom: "10px",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
@@ -80,9 +85,14 @@ const AboutMe = () => (
           <CardMedia
             key={index}
             component="img"
-            style={{ height: "100px", width: "auto", marginRight: "50px" }}
+            style={{
+              height: "100px",
+              width: "auto",
+              marginRight: "40px",
+              marginBottom: "20px",
+            }}
             src={src}
-            alt="Your Name"
+            alt="image loading "
           />
         ))}
         <Container
@@ -90,16 +100,21 @@ const AboutMe = () => (
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            margin: "20px",
+            // margin: "20px",
           }}
         >
           {img.map((src, index) => (
             <CardMedia
               key={index}
               component="img"
-              style={{ height: "80px", width: "auto", marginRight: "50px" }}
+              style={{
+                height: "90px",
+                width: "auto",
+                marginRight: "40px",
+                //marginBottom: "10px",
+              }}
               src={src}
-              alt="Your Name"
+              alt="image loading"
             />
           ))}
         </Container>
@@ -134,7 +149,14 @@ const Experience = () => (
       <VerticalTimelineElement
         key={index}
         className="vertical-timeline-element--work"
-        contentStyle={{ background: "", color: "", padding: "10px" }} // Adjust padding as needed
+        contentStyle={{
+          background: "",
+          color: "",
+          padding: "10px",
+          "@media (max-width: 600px)": {
+            padding: "5px",
+          },
+        }}
         contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
         date={element.duration}
         iconStyle={{ background: "", color: "" }}
@@ -160,7 +182,16 @@ const skillsData = [
 
 const Skills = () => (
   <div data-aos="zoom-in">
-    <div style={{ margin: "20px", padding: "20px" }}>
+    <div
+      style={{
+        margin: "20px",
+        padding: "20px",
+        "@media (max-width: 600px)": {
+          margin: "10px",
+          padding: "10px",
+        },
+      }}
+    >
       <div>
         {skillsData.map((skill, index) => (
           <div key={index} style={{ margin: "30px 0" }}>
@@ -170,7 +201,7 @@ const Skills = () => (
             <ProgressBar
               variant={skill.color}
               now={skill.value}
-              style={{ height: "15px" }}
+              style={{ height: "10px" }}
             />
           </div>
         ))}
@@ -181,40 +212,47 @@ const Skills = () => (
 
 //Projects
 const Projects = () => (
-  <Container>
+  <div data-aos="zoom-out">
     <Typography variant="h4" gutterBottom>
       Projects
     </Typography>
-  </Container>
+  </div>
 );
 
 //Clicks
 const clicks = [
-  "./clicks_3.jpg",
-  "./clicks_1.jpg",
-  "./clicks_2.jpg",
-  "./clicks_4.jpg",
-  "./clicks_5.jpg",
-  "./clicks_6.jpg",
+  { img: "./clicks_3.jpg" },
+  { img: "./clicks_1.jpg" },
+  { img: "./clicks_2.jpg" },
+  { img: "./clicks_4.jpg" },
+  { img: "./clicks_5.jpg" },
+  { img: "./clicks_6.jpg" },
 ];
+
 const Clicks = () => (
-  <Container
+  <div
     style={{
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      margin: "20px",
       flexWrap: "wrap",
+      justifyContent: "space-between",
     }}
   >
-    <SimpleImageSlider
-      width={650}
-      height={650}
-      images={clicks}
-      showNavs={true}
-      scale={"fit"}
-    />
-  </Container>
+    {clicks.map((click, index) => (
+      <img
+        key={index}
+        src={click.img}
+        alt={`Click ${index + 1}`}
+        style={{
+          width: "30%",
+          height: "300px",
+          margin: "5px",
+          padding: "2px",
+          borderRadius: "8px",
+          objectFit: "cover",
+        }}
+      />
+    ))}
+  </div>
 );
 const handleTabChange = (event, newValue) => {
   switch (newValue) {
@@ -259,26 +297,52 @@ const App = () => {
           width: "100vw",
           margin: "auto",
           padding: "10px",
+          "@media (max-width: 960px)": {
+            width: "90vw",
+          },
+          "@media (max-width: 600px)": {
+            width: "80vw",
+          },
+          "@media (max-width: 400px)": {
+            width: "70vw",
+          },
         }}
       >
         <Card
           sx={{
             backgroundColor: "transparent",
-            borderRadius: "1",
+            borderRadius: 1,
             borderColor: "black",
             borderStyle: "solid",
-            //height: "800px",
+            height: "auto",
             width: "1500px",
+            "@media (max-width: 1600px)": {
+              width: "80%",
+            },
+            "@media (max-width: 1200px)": {
+              width: "90%",
+            },
+            "@media (max-width: 600px)": {
+              width: "100%",
+            },
           }}
         >
-          <Grid container>
+          <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <CardContent>
                 <div
                   data-aos="fade-up"
                   data-aos-anchor-placement="center-center"
                 >
-                  <ProfileImage />
+                  <CardMedia
+                    component="img"
+                    style={{
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                    src="./undraw_feeling_proud_qne1.svg"
+                    alt="Your Name"
+                  />
                   <Paper
                     sx={{
                       backgroundColor: "transparent",
