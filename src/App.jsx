@@ -365,6 +365,8 @@ const App = () => {
                     }}
                   >
                     <Tabs
+                      variant="scrollable"
+                      scrollButtons="auto"
                       onChange={handleTabChange}
                       aria-label="icon tabs example"
                     >
