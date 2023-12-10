@@ -11,7 +11,6 @@ import {
   Tab,
   Paper,
   Grid,
-  Box,
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import "aos/dist/aos.css";
@@ -222,6 +221,7 @@ const clicks = [
 
 const Clicks = () => (
   <div
+    data-aos="zoom-out"
     style={{
       display: "flex",
       flexWrap: "wrap",
@@ -271,12 +271,9 @@ const handleTabChange = (event, newValue) => {
 };
 
 const App = () => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
   const [tabValue, setTabValue] = useState(0);
   useEffect(() => {
-    // Get the current pathname and determine the tab index
+    Aos.init();
     const path = window.location.pathname;
     const tabIndex = [
       "/",
@@ -286,7 +283,6 @@ const App = () => {
       "/clicks",
     ].indexOf(path);
 
-    // Set the tab value based on the index or default to 0
     setTabValue(tabIndex !== -1 ? tabIndex : 0);
   }, []);
   const handleChange = (event, newValue) => {
@@ -298,16 +294,17 @@ const App = () => {
   return (
     <Router>
       <CssBaseline />
-      <Box
-        sx={{
+      <body
+        style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          minHeight: "100vh",
           background: "linear-gradient(to right, #003973, #E5E5BE)",
-          height: "100vh",
           width: "100vw",
-          margin: "auto",
           padding: "10px",
+          boxSizing: "border-box",
+          overflowX: "hidden",
           "@media (max-width: 960px)": {
             width: "90vw",
           },
@@ -350,9 +347,10 @@ const App = () => {
                     style={{
                       width: "100%",
                       objectFit: "cover",
+                      padding: "10px",
                     }}
                     src="./undraw_feeling_proud_qne1.svg"
-                    alt="Your Name"
+                    alt="Image"
                   />
                   <Paper
                     sx={{
@@ -363,7 +361,7 @@ const App = () => {
                       borderWidth: "1px",
                       display: "flex",
                       justifyContent: "center",
-                      height: "60px",
+                      alignItems: "center",
                     }}
                   >
                     <Tabs
@@ -404,6 +402,8 @@ const App = () => {
                         backgroundColor: "#6C63FF",
                       },
                     }}
+                    variant="scrollable"
+                    scrollButtons="auto"
                   >
                     <Tab
                       label="About Me"
@@ -449,7 +449,7 @@ const App = () => {
             </Grid>
           </Grid>
         </Card>
-      </Box>
+      </body>
     </Router>
   );
 };
