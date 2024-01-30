@@ -261,7 +261,7 @@ const handleTabChange = (event, newValue) => {
       break;
     case 4:
       window.open(
-        "https://drive.google.com/file/d/1G-RaA_ZEsJYv94EzXvjEqrQO0-Y9VN-t/view?usp=drive_link",
+        "https://drive.google.com/file/d/1bk4mKgnSfKd7X7a9RIUAyu8J7papVydH/view?usp=drive_link",
         "_blank"
       );
       break;
