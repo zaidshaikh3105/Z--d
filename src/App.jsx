@@ -56,7 +56,10 @@ const AboutMe = () => (
       </Typography>
       <Typography variant="h4">
         I am Zaid Shaikh, a passionate React.js and Flutter developer with a
-        focus on integrating web and mobile experiences with ease.
+        focus on integrating web and mobile experiences with ease. Also working
+        as a Computer Science tutor @ Chetana College Education Management ||
+        Mumbai, Maharashtra
+        <Typography variant="h5"></Typography>
       </Typography>
       <Typography variant="h5">
         Equipped with a Masters degree in Computer Science from the renowned
