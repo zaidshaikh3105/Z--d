@@ -118,6 +118,12 @@ const AboutMe = () => (
 // Exp
 const exp = [
   {
+    title: "Computer Science Faculty  ",
+    Company: "Chetana College",
+    duration: "January 2024 - Present",
+    desc: "Working as a Computer Science Teacher ",
+  },
+  {
     title: "Web Developer  ",
     Company: "Freelancer",
     duration: "March 2023 - Present",
